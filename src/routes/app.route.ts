@@ -1,11 +1,11 @@
 import express from "express";
 
-// Init middleware
-const appRoute = express();
-
 // Import routes
 import { rootRouter } from "./root.route";
 import { userRouter } from "./user.route";
+
+// Init express
+const appRoute = express();
 
 // Init routes
 appRoute.use(rootRouter)
