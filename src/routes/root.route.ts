@@ -1,9 +1,9 @@
-import { Router } from "express";
+import { Router, Request, Response } from "express"
 
-const rootRouter = Router();
+const rootRouter = Router()
 
-rootRouter.get('/', (req, res) => {
-  res.status(200).send({ msg: 'Welcome to TS API' });
+rootRouter.get('/', (req: Request, res: Response) => {
+  res.status(200).send({ msg: 'Welcome to TS API' })
 })
 
 export { rootRouter }
