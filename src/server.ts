@@ -23,7 +23,7 @@ mongoose.connect(config.mongo.uri, { useNewUrlParser: true, useUnifiedTopology: 
 app.use(appRoute)
 
 // Handling Route Errors
-appRoute.use((req: Request, res: Response) => {
+app.use((req: Request, res: Response) => {
   const error = new Error('Not found the requested url.');
   res.status(404 || 500);
   res.json({ error: error.message });
