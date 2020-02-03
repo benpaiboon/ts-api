@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon -x ts-node src/server.ts",
+    "dev": "nodemon -x ts-node server.ts",
     "build": "tsc -p ."
   },
   "keywords": [],
@@ -13,12 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.8.10",
-    "morgan": "^1.9.1",
-    "serve-favicon": "^2.5.0"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
