@@ -1,4 +1,5 @@
 export default {
+  "env": "prod",
   "server": {
     "port": 5000
   },

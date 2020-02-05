@@ -15,5 +15,9 @@
         "src/types/*"
       ]
     }
-  }
+  },
+  "exclude": [
+    "client",
+    "build.ts"
+  ]
 }

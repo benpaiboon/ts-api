@@ -5,18 +5,24 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon -x ts-node server.ts",
-    "build": "tsc -p ."
+    "dev:client": "cd client && yarn start",
+    "dev:server": "nodemon -x ts-node server.ts",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "client:build": "cd client && yarn build",
+    "server:build": "tsc -p .",
+    "build": "ts-node build.ts"
   },
   "keywords": [],
   "author": "Paiboon Sirawit",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.8.10",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "shelljs": "^0.8.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
@@ -24,6 +30,7 @@
     "@types/mongoose": "^5.7.0",
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.5.3",
+    "@types/shelljs": "^0.8.6",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
