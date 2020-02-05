@@ -5,6 +5,7 @@ import { default as config } from "./config/config";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import path from "path";
+import favicon from "serve-favicon";
 import { appRoute } from "./routes/app.route";
 
 // Init middleware
@@ -22,6 +23,7 @@ mongoose.connect(config.mongo.uri, { useNewUrlParser: true, useUnifiedTopology: 
 
 // Prod mode
 if (config.env === 'prod') {
+  app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
   app.use(express.static(path.join(__dirname, 'build')));
 
   // Routes

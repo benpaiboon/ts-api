@@ -5,10 +5,11 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
-    "dev:client": "cd client && yarn start",
+    "system:install": "npm i && cd client && npm i",
+    "dev:client": "cd client && npm start",
     "dev:server": "nodemon -x ts-node server.ts",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "client:build": "cd client && yarn build",
+    "client:build": "cd client && npm run build",
     "server:build": "tsc -p .",
     "build": "ts-node build.ts"
   },
@@ -22,6 +23,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
+    "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "@types/mongoose": "^5.7.0",
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.5.3",
+    "@types/serve-favicon": "^2.5.0",
     "@types/shelljs": "^0.8.6",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",

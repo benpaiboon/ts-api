@@ -3,6 +3,6 @@ import shell from "shelljs";
 
 // Copy files to release dir
 shell.rm('-rf', 'dist/*');
+shell.exec('cd client && npm run build');
 shell.exec('tsc -p .');
-shell.exec('cd client && yarn build');
 shell.cp('-R', 'client/build', 'dist/');
