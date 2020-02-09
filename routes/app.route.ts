@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 
 // Import routes
 import { rootRouter } from "./root.route";

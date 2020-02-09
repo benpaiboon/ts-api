@@ -13,5 +13,17 @@ export const bookController = {
       console.error(e);
       res.status(500).json({ error: e.message });
     }
+  },
+  findOne: async (req: Request, res: Response) => {
+    try {
+      const docs = await Book.findOne({ _id: req.params._id })
+      if (docs === null)
+        throw new Error('No document found or something went wrong.');
+      else
+        res.status(200).json(docs);
+    } catch (e) {
+      console.error(e);
+      res.status(500).json({ error: e.message });
+    }
   }
 } 

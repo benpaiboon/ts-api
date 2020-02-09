@@ -8,5 +8,8 @@ const bookRouter = Router();
 // GET all
 bookRouter.get('/book', bookController.find)
 
+// GET one
+bookRouter.get('/book/:_id', bookController.findOne)
+
 // Export
 export { bookRouter }
