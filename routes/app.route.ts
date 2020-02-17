@@ -1,7 +1,7 @@
-import express, { Request, Response } from "express";
+import express from "express";
 
 // Import routes
-import { rootRouter } from "./root.route";
+import { indexRouter } from "./index.route";
 import { userRouter } from "./user.route";
 import { bookRouter } from "./book.route";
 
@@ -9,7 +9,7 @@ import { bookRouter } from "./book.route";
 const appRoute = express();
 
 // Init routes
-appRoute.use(rootRouter)
+appRoute.use(indexRouter)
 appRoute.use(userRouter)
 appRoute.use(bookRouter)
 

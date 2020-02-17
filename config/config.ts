@@ -1,5 +1,5 @@
-export default {
-  "env": "dev",
+export const config = {
+  "env": "prod",
   "server": {
     "port": 5000
   },

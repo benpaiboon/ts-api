@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import * as bodyParser from "body-parser";
-import { default as config } from "./config/config";
+import bodyParser from "body-parser";
+import { config } from "./config/config";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import path from "path";
