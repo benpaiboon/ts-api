@@ -23,15 +23,15 @@ mongoose.connect(config.mongo.uri, { useNewUrlParser: true, useUnifiedTopology: 
 
 // Prod mode
 if (config.env === 'prod') {
-  app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(favicon(path.join(__dirname, 'web/favicon.ico')));
+  app.use(express.static(path.join(__dirname, 'web')));
 
   // Routes
   app.use(appRoute)
 
   // Handle missing routes
   app.get('*', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'web/index.html'));
   });
 }
 else {
